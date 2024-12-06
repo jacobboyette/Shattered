@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #222831;
+    color: #eeeeee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px;
+    background: #393e46;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#story-section {
+    padding: 20px;
+    background: #00adb5;
+    color: #222831;
+    border-bottom: 5px solid #00adb5;
+    text-align: center;
+    font-size: 18px;
+}
+
+#button-section,
+#crossroads-section,
+#dynamic-buttons,
+#reset-section {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #eeeeee;
+    background-color: #00adb5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #00bfbf;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #009faf;
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#item-section {
+    background: #222831;
+    color: #eeeeee;
+    padding: 15px;
+    border-top: 3px solid #00adb5;
+    font-size: 16px;
+    text-align: center;
+}
+
+#item-section p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #game-container {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+#return-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#return-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #eeeeee;
+    background-color: #393e46;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#return-btn:hover {
+    background-color: #00adb5;
+    transform: scale(1.05);
+}
+
+#return-btn:active {
+    background-color: #009faf;
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

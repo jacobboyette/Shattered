@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmhouse Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <audio id="background-music" autoplay loop hidden>
+        <source src="sounds/tap-room-rag-183462.mp3" type="audio/mpeg">
+        </audio>
+    
+</head>
+<body>
+    <div id="game-container">
+        <div id="story-section">
+            <p id="story-text">You wake up in a bed that isn't yours in a farmhouse. The air smells of fresh hay and soil. What will you do?</p>
+        </div>
+        <div id="button-section">
+            <button id="get-up-btn">Get Up</button>
+        </div>
+        <div id="crossroads-section" style="display: none;">
+            <p id="priest-text">"Greetings, traveler. There are beasts that dwell within this land. It is your job to defeat them. You'll find useful items along the way, but beware—you can only carry two at a time."</p>
+            <div id="directions">
+                <div id="directions">
+                    <button class="location-btn" data-location="apple-orchard">Go to the Apple Orchard</button>
+                    <button class="location-btn" data-location="lake">Go to the Lake</button>
+                    <button class="location-btn" data-location="town">Go to the Town</button>
+                    <button class="location-btn" data-location="woods">Go to the Woods</button>
+                </div>
+                
+            </div>
+        </div>
+        <div id="item-section">
+            <p>Inventory: <span id="inventory">None</span></p>
+        </div>
+    </div>
+    <div id="reset-section" style="display: none;">
+        <button id="reset-btn">Restart Game</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
