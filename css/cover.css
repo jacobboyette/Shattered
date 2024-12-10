@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/shatteredcover.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    text-shadow: 0 0 3px black;
+}
+
+@font-face {
+    font-family: Zombie Holocaust;
+    src: url(../fonts/zombie-holocaust.regular.ttf);
+}
+
+h1{
+    font-family: 'Zombie Holocaust', sans-serif;
+    letter-spacing: 1px;
+    font-size: 90px;
+    font-weight: lighter;
+    color: black;
+    text-shadow: 0 0 3px red, 0 0 5px black;
+    padding-top: 70px;
+}
+
+.cov{
+    background-color: rgba(249, 224, 190, 0.562);
+    text-align: center;
+
+
+
+    a{
+        text-decoration: none;
+        font-family: 'Zombie Holocaust', sans-serif;
+        font-size: 40px;
+        font-weight: lighter;
+    }
+
+    a:hover{
+        font-size: 60px;
+        color: darkred;
+        text-shadow: 0 0 5px black;
+    }
+
+}
