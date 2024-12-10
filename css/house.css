@@ -25,6 +25,7 @@ body {
     width: 80%;
     text-align: center;
     cursor: pointer;
+    z-index: 1;
 }
 .button {
     padding: 10px 20px;
