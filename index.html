@@ -3,44 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmhouse Adventure</title>
-    <link rel="stylesheet" href="styles.css">
-    <audio id="background-music" autoplay loop hidden>
-        <source src="sounds/tap-room-rag-183462.mp3" type="audio/mpeg">
-        </audio>
-    
+    <title>Game Cover Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <div id="game-container">
-        <div id="story-section">
-            <p id="story-text">	You awaken to the scent of damp stone and aged wood, the air heavy with silence. A faint flicker of candlelight dances on the cathedral walls, illuminating intricate carvings that twist and coil like the shadows of your thoughts. As your senses begin to sharpen,
-                you shift slightly, the rough stone of the altar pressing into your back. A chill courses through you, more than the cold of the stone; it’s a disquieting void that gnaws at the edges of your consciousness. 
-                Confusion swirls within you like the smoke curling from the flickering candles, casting ghostly shadows that flit across the room and seem to whisper secrets just beyond your grasp.
-            You force yourself to sit up, the damp chill of the air clinging to your skin like a shroud. The flickering light reveals the altar draped in tattered cloth, stained with age and something darker, something that sends a shiver down your spine </p>
-        </div>
-        <div id="button-section">
-            <button id="get-up-btn">Get Up</button>
-        </div>
-        <div id="crossroads-section" style="display: none;">
-            <p id="priest-text">"Greetings, traveler. There are beasts that dwell within this land. It is your job to defeat them. You'll find useful items along the way, but beware—you can only carry two at a time."</p>
-            <div id="directions">
-                <div id="directions">
-                    <button class="location-btn" data-location="apple-orchard">Go to the Apple Orchard</button>
-                    <button class="location-btn" data-location="lake">Go to the Lake</button>
-                    <button class="location-btn" data-location="town">Go to the Town</button>
-                    <button class="location-btn" data-location="woods">Go to the Woods</button>
-                </div>
-                
-            </div>
-        </div>
-        <div id="item-section">
-            <p>Inventory: <span id="inventory">None</span></p>
-        </div>
+    <div class="container">
+        <h1>[Game Title]</h1>
+        <h2>[Game Subtitle/Tagline]</h2>
+        <a href="house.html" class="button">Start Game</a>
     </div>
-    <div id="reset-section" style="display: none;">
-        <button id="reset-btn">Restart Game</button>
-    </div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
