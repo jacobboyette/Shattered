@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Crossroads</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('background-placeholder.jpg') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .dialogue-box {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .image-container {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder {
+            width: 150px;
+            height: 200px;
+            background-color: #666;
+            border: 2px dashed #fff;
+            border-radius: 5px;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .options {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .option {
+            position: relative;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #0056b3;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+        .option:hover .tooltip {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Priest Image -->
+    <div id="priest-container" class="image-container">
+        <div class="placeholder">[Priest Image Placeholder]</div>
+    </div>
+
+    <!-- Dialogue boxes -->
+    <div id="dialogue" class="dialogue-box">
+        [Priest dialogue part 1. Click to continue.]
+    </div>
+
+    <!-- New Image with Options -->
+    <div id="options-container" class="image-container options">
+        <div class="placeholder">[New Image Placeholder]</div>
+        <div>
+            <button class="button" onclick="navigateTo('wyrm.html')">Go to Orchard</button>
+            <button class="button" onclick="navigateTo('demon.html')">Go to Town</button>
+            <button class="button" onclick="navigateTo('hydra.html')">Go to Lake</button>
+            <button class="button" onclick="navigateTo('skinwalker.html')">Go to Forest</button>
+        </div>
+    </div>
+
+    <!-- Inventory display -->
+    <div id="inventory" class="inventory">
+        <strong>Inventory:</strong>
+        <ul id="inventory-list"></ul>
+    </div>
+
+    <script>
+        // Dialogue progression
+        const dialogueBox = document.getElementById('dialogue');
+        const priestContainer = document.getElementById('priest-container');
+        const optionsContainer = document.getElementById('options-container');
+        let dialogueIndex = 0;
+        const dialogueTexts = [
+            "Priest dialogue part 1. Click to continue.",
+            "Priest dialogue part 2. Click to continue.",
+            "Priest dialogue part 3. Click to continue."
+        ];
+
+        dialogueBox.addEventListener('click', () => {
+            dialogueIndex++;
+            if (dialogueIndex < dialogueTexts.length) {
+                dialogueBox.textContent = dialogueTexts[dialogueIndex];
+            } else {
+                dialogueBox.style.display = 'none'; // Hide dialogue box
+                priestContainer.style.display = 'none'; // Remove priest image
+                optionsContainer.style.display = 'flex'; // Show new image and options
+            }
+        });
+
+        // Navigation function
+        function navigateTo(location) {
+            window.location.href = location;
+        }
+        // Initialize inventory
+        const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+
+        // Function to update inventory display
+        function updateInventoryDisplay() {
+            const inventoryList = document.getElementById('inventory-list');
+            inventoryList.innerHTML = '';
+            inventory.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                inventoryList.appendChild(listItem);
+            });
+        }
+
+        // Update inventory display on page load
+        updateInventoryDisplay();
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priest Encounter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #444;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .priest {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px; /* Adjust width as needed */
+            height: auto;
+            display: none; /* Initially hidden */
+        }
+        .dialogue-box {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            display: none; /* Initially hidden */
+            cursor: pointer;
+        }
+        .button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: none; /* Initially hidden */
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Priest Placeholder -->
+    <img id="priest" src="priest-placeholder.png" alt="Priest Image" class="priest">
+
+    <!-- Dialogue Boxes -->
+    <div id="dialogue1" class="dialogue-box">
+        [Priest's first dialogue. Click to continue.]
+    </div>
+    <div id="dialogue2" class="dialogue-box">
+        [Priest's second dialogue. Click to continue.]
+    </div>
+    <div id="dialogue3" class="dialogue-box">
+        [Priest's final dialogue. Click to continue.]
+    </div>
+
+    <!-- Button to crossroads -->
+    <a id="toCrossroads" class="button" href="crossroad.html">Go to the Crossroads</a>
+
+    <script>
+        // Elements
+        const priest = document.getElementById('priest');
+        const dialogue1 = document.getElementById('dialogue1');
+        const dialogue2 = document.getElementById('dialogue2');
+        const dialogue3 = document.getElementById('dialogue3');
+        const toCrossroads = document.getElementById('toCrossroads');
+
+        // Show the priest and the first dialogue when the page loads
+        window.onload = () => {
+            priest.style.display = 'block';
+            dialogue1.style.display = 'block';
+        };
+
+        // Dialogue interactions
+        dialogue1.addEventListener('click', () => {
+            dialogue1.style.display = 'none';
+            dialogue2.style.display = 'block';
+        });
+
+        dialogue2.addEventListener('click', () => {
+            dialogue2.style.display = 'none';
+            dialogue3.style.display = 'block';
+        });
+
+        dialogue3.addEventListener('click', () => {
+            dialogue3.style.display = 'none';
+            priest.style.display = 'none'; // Priest leaves
+            toCrossroads.style.display = 'inline-block'; // Show the button to the crossroads
+        });
+    </script>
+</body>
+</html>

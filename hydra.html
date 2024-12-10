@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crossroads</title>
+    <title>Hydra Boss Fight</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #444;
+            background-color: #000;
+            background-image: url('placeholder-hydra-background.jpg'); /* Replace with your background */
+            background-size: cover;
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -17,6 +19,13 @@
             justify-content: center;
             height: 100vh;
             position: relative;
+        }
+        .dialogue {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
         }
         .button {
             padding: 10px 20px;
@@ -45,12 +54,9 @@
     </style>
 </head>
 <body>
-    <!-- Navigation buttons -->
-    <div>
-        <button class="button" onclick="navigateTo('forest.html')">Go to Forest</button>
-        <button class="button" onclick="navigateTo('orchard.html')">Go to Orchard</button>
-        <button class="button" onclick="navigateTo('lake.html')">Go to Lake</button>
-        <button class="button" onclick="navigateTo('town.html')">Go to Town</button>
+    <!-- Boss Dialogue -->
+    <div class="dialogue" id="boss-dialogue">
+        [The Hydra looms before you, hissing and thrashing. Replace this text with the boss's dialogue.]
     </div>
 
     <!-- Inventory display -->
@@ -59,37 +65,46 @@
         <ul id="inventory-list"></ul>
     </div>
 
+    <!-- Buttons to choose items -->
+    <button class="button" id="item1-button" style="display: none;">Use Item 1</button>
+    <button class="button" id="item2-button" style="display: none;">Use Item 2</button>
+
     <script>
-        // Initialize inventory
+        // Initialize inventory and boss weaknesses
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+        const bossWeaknesses = ['mace', 'frying pan', 'hammer']; // Items that can defeat the Hydra
 
         // Function to update inventory display
         function updateInventoryDisplay() {
             const inventoryList = document.getElementById('inventory-list');
             inventoryList.innerHTML = '';
-            inventory.forEach(item => {
+            inventory.forEach((item, index) => {
                 const listItem = document.createElement('li');
                 listItem.textContent = item;
                 inventoryList.appendChild(listItem);
+
+                // Display buttons for each inventory item
+                const button = document.getElementById(`item${index + 1}-button`);
+                if (button) {
+                    button.style.display = 'inline-block';
+                    button.textContent = `Use ${item}`;
+                    button.onclick = () => useItem(item);
+                }
             });
         }
 
-        // Navigation function
-        function navigateTo(location) {
-            window.location.href = location;
-        }
-
-        // Check inventory and redirect if full
-        function checkInventoryAndRedirect() {
-            if (inventory.length === 2) {
-                window.location.href = 'finalcr.html'; // Redirect to final crossroads if inventory is full
+        // Function to handle using an item
+        function useItem(item) {
+            if (bossWeaknesses.includes(item.toLowerCase())) {
+                window.location.href = 'victory.html'; 
+            } else {
+                window.location.href = 'defeat.html'; 
             }
         }
 
-        // Check inventory and update display on page load
+        // Update inventory display on page load
         window.onload = () => {
-            checkInventoryAndRedirect(); // Check and redirect if needed
-            updateInventoryDisplay(); // Update the inventory display
+            updateInventoryDisplay();
         };
     </script>
 </body>
