@@ -28,7 +28,7 @@ const bosses = {
 };
 
 const bossRequirements = {
-    'Hydra': ['Frying Pan', 'The Sword Excalibur', 'An Axe'],
+    'Hydra': ['Frying Pan', 'The Sword Excalibur', 'A Maul'],
     'Wyrm': ['Really Big Stick', 'A Gallon of Salt', 'An Axe'],
     'Demon': ['Holy Water from a Shrine', 'A Crucifix (gifted by a traveling priest)', 'Rosary'],
     'Skinwalker Priest': ['White Ash from a Burned Tree', 'Sacred Fire in an Oil Lamp', 'Spell Scroll']
