@@ -72,10 +72,9 @@
     <button class="button" onclick="goBack()">Go Back To Crossroads</button>
 
     <!-- Item buttons -->
-    <div id="item1" class="item" style="top: 30%; left: 20%;">Pick up Item 1</div>
-    <div id="item2" class="item" style="top: 30%; left: 70%;">Pick up Item 2</div>
-    <div id="item3" class="item" style="top: 50%; left: 40%;">Pick up Item 3</div>
-    <div id="item4" class="item" style="top: 60%; left: 60%;">Pick up Item 4</div>
+    <div id="ash" class="item" style="top: 30%; left: 20%;">White Ash</div>
+    <div id="rosary" class="item" style="top: 30%; left: 70%;">Rosary</div>
+    <div id="garrote" class="item" style="top: 50%; left: 40%;">Garrote</div>
 
     <!-- Inventory display -->
     <div id="inventory" class="inventory">
@@ -121,10 +120,9 @@
         }
 
         // Add event listeners to items
-        document.getElementById('item1').addEventListener('click', () => pickUpItem('Item 1', 'item1'));
-        document.getElementById('item2').addEventListener('click', () => pickUpItem('Item 2', 'item2'));
-        document.getElementById('item3').addEventListener('click', () => pickUpItem('Item 3', 'item3'));
-        document.getElementById('item4').addEventListener('click', () => pickUpItem('Item 4', 'item4'));
+        document.getElementById('ash').addEventListener('click', () => pickUpItem('White Ash', 'ash'));
+        document.getElementById('rosary').addEventListener('click', () => pickUpItem('Rosary', 'rosary'));
+        document.getElementById('garrote').addEventListener('click', () => pickUpItem('Garrote', 'garrote'));
 
         // Go outside functionality
         function goBack() {

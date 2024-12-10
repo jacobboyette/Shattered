@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydra Boss Fight</title>
+    <title>Wyrm Boss Fight</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #000;
-            background-image: url('placeholder-hydra-background.jpg'); /* Replace with your background */
+            background-image: url('placeholder-wyrm-background.jpg'); /* Replace with your background */
             background-size: cover;
             color: #fff;
             display: flex;
@@ -72,7 +72,7 @@
     <script>
         // Initialize inventory and boss weaknesses
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-        const bossWeaknesses = ['mace', 'frying pan', 'hammer']; // Items that can defeat the Hydra
+        const bossWeaknesses = ['salt', 'sword', 'axe', 'dragonsbane', 'lamp']; // Items that can defeat the Wyrm
 
         // Function to update inventory display
         function updateInventoryDisplay() {
@@ -88,17 +88,17 @@
                 if (button) {
                     button.style.display = 'inline-block';
                     button.textContent = `Use ${item}`;
-                    button.onclick = () => useItem(item);
+                    button.onclick = () => useItem(item.toLowerCase()); // Normalize case for comparison
                 }
             });
         }
 
         // Function to handle using an item
         function useItem(item) {
-            if (bossWeaknesses.includes(item.toLowerCase())) {
-                window.location.href = 'victory.html'; 
+            if (bossWeaknesses.includes(item)) { // Compare normalized item name
+                window.location.href = 'victory.html'; // Redirect to victory page
             } else {
-                window.location.href = 'defeat.html'; 
+                window.location.href = 'defeat.html'; // Redirect to defeat page
             }
         }
 

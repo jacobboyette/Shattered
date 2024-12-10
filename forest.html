@@ -72,10 +72,9 @@
     <button class="button" onclick="goBack()">Go Back To Crossroads</button>
 
     <!-- Item buttons -->
-    <div id="item1" class="item" style="top: 30%; left: 20%;">Pick up Item 1</div>
-    <div id="item2" class="item" style="top: 30%; left: 70%;">Pick up Item 2</div>
-    <div id="item3" class="item" style="top: 50%; left: 40%;">Pick up Item 3</div>
-    <div id="item4" class="item" style="top: 60%; left: 60%;">Pick up Item 4</div>
+    <div id="axe" class="item" style="top: 30%; left: 20%;">Axe</div>
+    <div id="crucifix" class="item" style="top: 30%; left: 70%;">Crucifix</div>
+    <div id="mace" class="item" style="top: 50%; left: 40%;">Mace</div>
 
     <!-- Inventory display -->
     <div id="inventory" class="inventory">
@@ -99,6 +98,17 @@
                 listItem.addEventListener('click', () => dropItem(index));
                 inventoryList.appendChild(listItem);
             });
+
+            // Hide item buttons if inventory is full
+            if (inventory.length >= 2) {
+                document.querySelectorAll('.item').forEach(item => {
+                    item.style.display = 'none';
+                });
+            } else {
+                document.querySelectorAll('.item').forEach(item => {
+                    item.style.display = 'block';
+                });
+            }
         }
 
         // Function to pick up an item
@@ -121,14 +131,13 @@
         }
 
         // Add event listeners to items
-        document.getElementById('item1').addEventListener('click', () => pickUpItem('Item 1', 'item1'));
-        document.getElementById('item2').addEventListener('click', () => pickUpItem('Item 2', 'item2'));
-        document.getElementById('item3').addEventListener('click', () => pickUpItem('Item 3', 'item3'));
-        document.getElementById('item4').addEventListener('click', () => pickUpItem('Item 4', 'item4'));
+        document.getElementById('axe').addEventListener('click', () => pickUpItem('Axe', 'axe'));
+        document.getElementById('crucifix').addEventListener('click', () => pickUpItem('Crucifix', 'crucifix'));
+        document.getElementById('mace').addEventListener('click', () => pickUpItem('Mace', 'mace'));
 
         // Go back to crossroads
         function goBack() {
-            window.location.href = 'crossroad.html';
+            window.location.href = 'crossroad.html'; // Fixed the filename
         }
 
         // Initialize dialogue box functionality

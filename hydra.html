@@ -72,40 +72,37 @@
     <script>
         // Initialize inventory and boss weaknesses
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-        const bossWeaknesses = ['mace', 'frying pan', 'hammer']; // Items that can defeat the Hydra
+const bossWeaknesses = ['mace', 'frying pan', 'hammer', 'lamp']; // Correctly spelled items
 
-        // Function to update inventory display
-        function updateInventoryDisplay() {
-            const inventoryList = document.getElementById('inventory-list');
-            inventoryList.innerHTML = '';
-            inventory.forEach((item, index) => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item;
-                inventoryList.appendChild(listItem);
+function updateInventoryDisplay() {
+    const inventoryList = document.getElementById('inventory-list');
+    inventoryList.innerHTML = '';
+    inventory.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        inventoryList.appendChild(listItem);
 
-                // Display buttons for each inventory item
-                const button = document.getElementById(`item${index + 1}-button`);
-                if (button) {
-                    button.style.display = 'inline-block';
-                    button.textContent = `Use ${item}`;
-                    button.onclick = () => useItem(item);
-                }
-            });
+        const button = document.getElementById(`item${index + 1}-button`);
+        if (button) {
+            button.style.display = 'inline-block';
+            button.textContent = `Use ${item}`;
+            button.onclick = () => useItem(item.toLowerCase()); // Normalize case when using the item
         }
+    });
+}
 
-        // Function to handle using an item
-        function useItem(item) {
-            if (bossWeaknesses.includes(item.toLowerCase())) {
-                window.location.href = 'victory.html'; 
-            } else {
-                window.location.href = 'defeat.html'; 
-            }
-        }
+function useItem(item) {
+    if (bossWeaknesses.includes(item)) {
+        window.location.href = 'victory.html'; // Victory if the item is correct
+    } else {
+        window.location.href = 'defeat.html'; // Defeat if the item is incorrect
+    }
+}
 
-        // Update inventory display on page load
-        window.onload = () => {
-            updateInventoryDisplay();
-        };
+window.onload = () => {
+    updateInventoryDisplay();
+};
+4
     </script>
 </body>
 </html>
