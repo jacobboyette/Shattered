@@ -77,6 +77,8 @@
     <div id="item3" class="item" style="top: 50%; left: 40%;">Pick up Item 3</div>
     <div id="item4" class="item" style="top: 60%; left: 60%;">Pick up Item 4</div>
 
+    
+
     <!-- Inventory display -->
     <div id="inventory" class="inventory">
         <strong>Inventory:</strong>
@@ -84,9 +86,10 @@
     </div>
 
     <script>
-        // Initialize inventory
-        const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-
+        // Reset inventory on page load
+        localStorage.removeItem('inventory');
+        const inventory = [];
+    
         // Function to update inventory display
         function updateInventoryDisplay() {
             const inventoryList = document.getElementById('inventory-list');
@@ -100,7 +103,7 @@
                 inventoryList.appendChild(listItem);
             });
         }
-
+    
         // Function to pick up an item
         function pickUpItem(itemName, itemId) {
             if (inventory.length >= 2) {
@@ -112,33 +115,34 @@
             document.getElementById(itemId).style.display = 'none';
             updateInventoryDisplay();
         }
-
+    
         // Function to drop an item
         function dropItem(index) {
             inventory.splice(index, 1); // Remove the item from the inventory
             localStorage.setItem('inventory', JSON.stringify(inventory));
             updateInventoryDisplay();
         }
-
+    
         // Add event listeners to items
         document.getElementById('item1').addEventListener('click', () => pickUpItem('Item 1', 'item1'));
         document.getElementById('item2').addEventListener('click', () => pickUpItem('Item 2', 'item2'));
         document.getElementById('item3').addEventListener('click', () => pickUpItem('Item 3', 'item3'));
         document.getElementById('item4').addEventListener('click', () => pickUpItem('Item 4', 'item4'));
-
+    
         // Go outside functionality
         function goOutside() {
             window.location.href = 'outside.html'; // Replace with the actual next page's filename
         }
-
+    
         // Initialize dialogue box functionality
         const dialogueBox = document.getElementById('dialogue');
         dialogueBox.addEventListener('click', () => {
             dialogueBox.style.display = 'none'; // Hides the dialogue box when clicked
         });
-
+    
         // Update inventory display on page load
         updateInventoryDisplay();
     </script>
+    
 </body>
 </html>
