@@ -19,10 +19,10 @@
     <div id="options-container" class="image-container options" style="display: none;">
         <div class="placeholder"><img id="priest" src="img/Father_Thorne.png" alt="Priest Image" class="priest"></div>
         <div>
-            <button class="button" onclick="navigateTo('wyrm.html')" title="Sharp item needed">Go to Orchard</button>
-            <button class="button" onclick="navigateTo('demon.html')" title="Divine item needed">Go to Town</button>
-            <button class="button" onclick="navigateTo('hydra.html')" title="Dull item needed">Go to Lake</button>
-            <button class="button" onclick="navigateTo('skinwalker.html')" title="Magical item needed">Go to Forest</button>
+           <li>  <button id="wyrm" class="button" onclick="navigateTo('wyrm.html')" title="Sharp item needed">Go to Orchard</button></li>
+           <li>  <button id="demon" class="button" onclick="navigateTo('demon.html')" title="Divine item needed">Go to Town</button></li>
+           <li>  <button id="hydra" class="button" onclick="navigateTo('hydra.html')" title="Dull item needed">Go to Lake</button></li>
+           <li>  <button id="skinwalker" class="button" onclick="navigateTo('skinwalker.html')" title="Magical item needed">Go to Forest</button></li>
         </div>
     </div>
 
@@ -77,5 +77,36 @@
         // Update inventory display on page load
         updateInventoryDisplay();
     </script>
+     <script src="js/add-element.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+     <script>
+   const firebaseConfig = {
+     apiKey: "AIzaSyDkrXnmL6_XV0L6EUatlSS2jWd21Q8Jo9E",
+     authDomain: "database225-ac030.firebaseapp.com",
+     projectId: "database225-ac030",
+     storageBucket: "database225-ac030.firebasestorage.app",
+     messagingSenderId: "659623570442",
+     appId: "1:659623570442:web:106d70ffcc308375aec3f3",
+     measurementId: "G-VSBX34PCEK"
+   };
+       // Initialize Firebase
+         const firebaseApp = firebase.initializeApp(firebaseConfig);
+         const db = firebase.firestore();
+         const auth = firebaseApp.auth();
+   
+       // Save the list to database
+       $('.button').click(function(){
+         $(this).text("Saving your soul for dinner...")
+         $('li').each(function(){
+           var value = $(this).text();
+           console.log("the item is "+ value);
+           db.collection("gameres").add({Item: value});
+         });
+       });
+   
+     </script>
+   
 </body>
 </html>

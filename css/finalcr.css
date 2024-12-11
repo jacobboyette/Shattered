@@ -45,6 +45,12 @@
             src: url(../fonts/zombie-holocaust.regular.ttf);
         }
         
+        li{
+            list-style: none;
+            list-style-type: none;
+            display: inline;
+        }
+
         .button {
             padding: none;
             margin: 5px;
