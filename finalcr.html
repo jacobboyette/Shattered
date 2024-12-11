@@ -7,30 +7,31 @@
     <link rel="stylesheet" href="css/finalcr.css">
 </head>
 <body>
-    <!-- Priest Image -->
 
+    <div id="priest-container">
+        <img id="priest" src="img/Father_Thorne.png" alt="Priest Image" class="priest">
+    </div>
 
-    <!-- Dialogue boxes -->
     <div id="dialogue" class="dialogue-box">
         [Priest dialogue part 1. Click to continue.]
     </div>
 
-    <!-- New Image with Options -->
-    <div id="options-container" class="image-container options">
+    <div id="options-container" class="image-container options" style="display: none;">
         <div class="placeholder">[New Image Placeholder]</div>
         <div>
-            <button class="button" onclick="navigateTo('wyrm.html')" title="You can hear something wicked slithering about...maybe bring something sharp?">Go to Orchard</button>
-            <button class="button" onclick="navigateTo('demon.html')" title="Something unholy dwells here...maybe bring something divine?">Go to Town</button>
-            <button class="button" onclick="navigateTo('hydra.html')" title="A marvelous knot of necks splashes about...maybe bring something dull?">Go to Lake</button>
-            <button class="button" onclick="navigateTo('skinwalker.html')" title="A shapshifting beast lurks in the shadows...maybe bring something magical?">Go to Forest</button>
+            <button class="button" onclick="navigateTo('wyrm.html')" title="Sharp item needed">Go to Orchard</button>
+            <button class="button" onclick="navigateTo('demon.html')" title="Divine item needed">Go to Town</button>
+            <button class="button" onclick="navigateTo('hydra.html')" title="Dull item needed">Go to Lake</button>
+            <button class="button" onclick="navigateTo('skinwalker.html')" title="Magical item needed">Go to Forest</button>
         </div>
     </div>
 
-    <!-- Inventory display -->
     <div id="inventory" class="inventory">
         <strong>Inventory:</strong>
         <ul id="inventory-list"></ul>
     </div>
+
+</body>
 
     <script>
         // Dialogue progression
