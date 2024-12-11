@@ -17,11 +17,15 @@ body {
 #garrote{
 background: none;
 position: relative;
-left: 50px;
-top: 20px;
+left: 400px;
+bottom: 200px;
+padding: none;
+margin: none;
 img{
-    width: 80px;
+    width: 200px;
     height: auto;
+    padding: none;
+    margin: none;
 
 }
 }
@@ -29,8 +33,10 @@ img{
 #ash{
 background: none ;
 position: relative;
+right: 130px;
+top: 190px;
 img{
-    width: 60px;
+    width: 80px;
     height: auto;
 }
 }
@@ -38,8 +44,10 @@ img{
 #rosary{
 background: none;
 position: relative;
+top: 100px;
+left: 100px;
 img{
-    width: 80px;
+    width: 100px;
     height: auto;
 }
 }

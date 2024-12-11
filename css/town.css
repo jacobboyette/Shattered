@@ -16,18 +16,21 @@ body {
 
 #pan{
     background: none ;
-position: relative;
+    position: relative;
+    right: 400px;
 img{
-    width: 60px;
+    width: 80px;
     height: auto;
 }
 }
 
 #scroll{
     background: none ;
-position: relative;
+    position: relative;
+    left: 420px;
+    bottom: 70px;
 img{
-    width: 60px;
+    width: 70px;
     height: auto;
 }
 }
