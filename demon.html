@@ -72,12 +72,8 @@
     <script>
         // Initialize inventory and boss weaknesses
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-<<<<<<< HEAD
-        const bossWeaknesses = ['crucifix', 'rosary', 'holy water', 'genie lamp']; // Items that can defeat the Demon
-=======
-        const bossWeaknesses = ['crucifix', 'rosary', 'water', 'lamp']; // Items that can defeat the Demon
->>>>>>> 37936fb98fe4010305cf1f23fe53f77fa35c7ab1
 
+        const bossWeaknesses = ['crucifix', 'rosary', 'holy water', 'genie lamp']; // Items that can defeat the Demon
         // Function to update inventory display
         function updateInventoryDisplay() {
             const inventoryList = document.getElementById('inventory-list');
