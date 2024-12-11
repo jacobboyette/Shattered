@@ -69,7 +69,11 @@
     <button class="button" id="item1-button" style="display: none;">Use Item 1</button>
     <button class="button" id="item2-button" style="display: none;">Use Item 2</button>
 
-    <script type="module">
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+
+    <script>
 
     const firebaseConfig = {
       apiKey: "AIzaSyDBkbQWyhqWQH7ftu_KUXrY4-GIspyJEnQ",
@@ -80,8 +84,9 @@
       appId: "1:141879270862:web:1709ab92160af548c71f9f",
           measurementId: "G-HZ3G14TPMV"
             };
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+
+        firebase.innitializeApp(firebaseConfig);
+        firebase.analytics();
 
         // Firestore functions
         async function recordBossVictory(bossName) {
