@@ -16,12 +16,69 @@ body {
 
    
 } 
+
 .bg{
-        background-image: url(../img/crossroad-removebg.png);
-        background-repeat: no-repeat;
-        background-size: 55%;
-        z-index: 1;
+    img{
+        position: fixed;
+        size: 55%;
+        top: 50px;
     }
+}
+
+#frst{
+    position: fixed;
+    right:170px;
+    top: 256px;
+    transform: rotate(-10deg);
+    z-index: 1;
+    background: none;
+    color: black;
+    text-shadow: 0 0 4px darkred;
+    font-size: 18px;
+   
+}
+
+#orcd{
+    position: fixed;
+    right: 170px;
+    top: 353px;
+    transform: rotate(9deg);
+    font-size: 14px;
+    color: black;
+    text-shadow: 0 0 4px darkred;
+    background: none;
+    z-index: 1;
+
+}
+
+#lke{
+    position: fixed;
+    right: 175px;
+    top:430px;
+    transform:rotate(9deg);
+    font-size: 14px;
+    color: black;
+    text-shadow: 0 0 4px darkred;
+    background: none;
+    z-index: 1;
+}
+
+#twn{
+    position: fixed;
+    right: 330px;
+    top: 285px;
+    transform: rotate(-10deg);
+    font-size: 18px;
+    background: none;
+    z-index: 1;
+    color: black;
+    text-shadow: 0 0 5px darkred;
+}
+
+#twn:hover, #lke:hover, #orcd:hover, #frst:hover{
+    text-shadow: 0 0 5px white;
+}
+
 .button {
     padding: 10px 20px;
     margin: 10px;
