@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyrm Boss Fight</title>
+    <title>Hydra Boss Fight</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #000;
-            background-image: url('placeholder-wyrm-background.jpg'); /* Replace with your background */
+            background-image: url('placeholder-hydra-background.jpg'); /* Replace with your background */
             background-size: cover;
             color: #fff;
             display: flex;
@@ -56,7 +56,7 @@
 <body>
     <!-- Boss Dialogue -->
     <div class="dialogue" id="boss-dialogue">
-        [The Wyrm looms before you, hissing and thrashing. Replace this text with the boss's dialogue.]
+        [The Hydra looms before you, hissing and thrashing. Replace this text with the boss's dialogue.]
     </div>
 
     <!-- Inventory display -->
@@ -72,40 +72,37 @@
     <script>
         // Initialize inventory and boss weaknesses
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-        const bossWeaknesses = ['salt', 'sword', 'axe', 'dragonsbane', 'lamp']; // Items that can defeat the Wyrm
+const bossWeaknesses = ['mace', 'frying pan', 'hammer', 'lamp']; // Correctly spelled items
 
-        // Function to update inventory display
-        function updateInventoryDisplay() {
-            const inventoryList = document.getElementById('inventory-list');
-            inventoryList.innerHTML = '';
-            inventory.forEach((item, index) => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item;
-                inventoryList.appendChild(listItem);
+function updateInventoryDisplay() {
+    const inventoryList = document.getElementById('inventory-list');
+    inventoryList.innerHTML = '';
+    inventory.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        inventoryList.appendChild(listItem);
 
-                // Display buttons for each inventory item
-                const button = document.getElementById(`item${index + 1}-button`);
-                if (button) {
-                    button.style.display = 'inline-block';
-                    button.textContent = `Use ${item}`;
-                    button.onclick = () => useItem(item.toLowerCase()); // Normalize case for comparison
-                }
-            });
+        const button = document.getElementById(`item${index + 1}-button`);
+        if (button) {
+            button.style.display = 'inline-block';
+            button.textContent = `Use ${item}`;
+            button.onclick = () => useItem(item.toLowerCase()); // Normalize case when using the item
         }
+    });
+}
 
-        // Function to handle using an item
-        function useItem(item) {
-            if (bossWeaknesses.includes(item)) { // Compare normalized item name
-                window.location.href = 'victory.html'; // Redirect to victory page
-            } else {
-                window.location.href = 'defeat.html'; // Redirect to defeat page
-            }
-        }
+function useItem(item) {
+    if (bossWeaknesses.includes(item)) {
+        window.location.href = 'victory.html'; // Victory if the item is correct
+    } else {
+        window.location.href = 'defeat.html'; // Defeat if the item is incorrect
+    }
+}
 
-        // Update inventory display on page load
-        window.onload = () => {
-            updateInventoryDisplay();
-        };
+window.onload = () => {
+    updateInventoryDisplay();
+};
+4
     </script>
 </body>
 </html>
