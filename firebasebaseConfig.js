@@ -4,12 +4,18 @@ import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstati
 
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-auth-domain",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-messaging-sender-id",
-    appId: "your-app-id"
+  apiKey: "AIzaSyDBkbQWyhqWQH7ftu_KUXrY4-GIspyJEnQ",
+  authDomain: "shattered-database.firebaseapp.com",
+  projectId: "shattered-database",
+  storageBucket: "shattered-database.firebasestorage.app",
+  messagingSenderId: "141879270862",
+  appId: "1:141879270862:web:1709ab92160af548c71f9f",
+  measurementId: "G-HZ3G14TPMV"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 };
 
 const app = initializeApp(firebaseConfig);
