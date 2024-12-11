@@ -13,6 +13,7 @@ body {
     height: 100vh;
     position: relative;
 }
+
 .dialogue-box {
     position: absolute;
     bottom: 10%;
