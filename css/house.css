@@ -36,6 +36,27 @@ body {
         width: 50px;
     }
 }
+
+#bullets{
+    background: none;
+    left: 15px;
+    bottom: 50px;
+    
+    img{
+        height: 50px;
+        width: 50px;
+    }
+}
+
+#lamp{
+    background: none;
+    right: 100px;
+     bottom: 50px;
+     img{
+        height: 60px;
+        width: auto;
+     }
+}
 .button {
     padding: 10px 20px;
     margin: 10px;
