@@ -72,8 +72,8 @@
     <button class="button" onclick="goBack()">Go Back To Crossroads</button>
 
     <!-- Item buttons -->
-    <div id="holywater" class="item" style="top: 30%; left: 20%;">Holy Water</div>
-    <div id="arcanefire" class="item" style="top: 30%; left: 70%;">Arcane Fire</div>
+    <div id="water" class="item" style="top: 30%; left: 20%;">Holy Water</div>
+    <div id="fire" class="item" style="top: 30%; left: 70%;">Arcane Fire</div>
     <div id="sword" class="item" style="top: 50%; left: 40%;">Sword</div>
 
     <!-- Inventory display -->
@@ -120,8 +120,8 @@
         }
 
         // Add event listeners to items
-        document.getElementById('holywater').addEventListener('click', () => pickUpItem('Holy Water', 'holywater'));
-        document.getElementById('arcanefire').addEventListener('click', () => pickUpItem('Arcane Fire', 'arcanefire'));
+        document.getElementById('water').addEventListener('click', () => pickUpItem('Holy Water', 'water'));
+        document.getElementById('fire').addEventListener('click', () => pickUpItem('Arcane Fire', 'fire'));
         document.getElementById('sword').addEventListener('click', () => pickUpItem('Sword', 'sword'));
 
         // Go outside functionality
