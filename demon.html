@@ -89,7 +89,7 @@
         firebase.analytics();
 
         // Firestore functions
-        async function recordBossVictory(bossName) {
+        function recordBossVictory(bossName) {
             const bossRef = doc(db, "bossStats", bossName);
 
             try {
@@ -109,7 +109,7 @@
             }
         }
 
-        async function recordBossDefeat(bossName) {
+        function recordBossDefeat(bossName) {
             const bossRef = doc(db, "bossStats", bossName);
 
             try {
