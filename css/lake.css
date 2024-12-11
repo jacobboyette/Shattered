@@ -14,6 +14,34 @@ body {
     height: 100vh;
     position: relative;
 }
+
+#water{
+    background: none ;
+    position: relative;
+    img{
+        width: 60px;
+        height: auto;
+    }
+}
+
+#fire{
+    background: none ;
+    position: relative;
+    img{
+        width: 60px;
+        height: auto;
+}
+}
+
+#sword{
+    background: none ;
+    position: relative;
+img{
+    width: 200px;
+    height: auto;
+}
+}
+
 .dialogue-box {
     position: absolute;
     bottom: 10%;

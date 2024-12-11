@@ -13,6 +13,12 @@
             height: 100vh;
             position: relative;
         }
+
+        #demon{
+            width: 300px;
+            height: auto;
+        }
+
         .dialogue {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 15px;

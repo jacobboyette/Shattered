@@ -13,6 +13,25 @@ body {
     height: 100vh;
     position: relative;
 }
+
+#pan{
+    background: none ;
+position: relative;
+img{
+    width: 60px;
+    height: auto;
+}
+}
+
+#scroll{
+    background: none ;
+position: relative;
+img{
+    width: 60px;
+    height: auto;
+}
+}
+
 .dialogue-box {
     position: absolute;
     bottom: 10%;

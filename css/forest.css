@@ -14,6 +14,33 @@ body {
     position: relative;
 }
 
+#axe{
+    background: none ;
+    position: relative;
+    img{
+        width: 60px;
+        height: auto;
+    }
+    }
+
+#mace{
+    background: none ;
+    position: relative;
+    img{
+        width: 60px;
+        height: auto;
+    }
+    }
+
+#crucifix{
+    background: none ;
+position: relative;
+img{
+    width: 60px;
+    height: auto;
+}
+}
+
 .dialogue-box {
     position: absolute;
     bottom: 10%;
