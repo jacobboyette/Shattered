@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     background-image:url(../img/possibletownbg.gif);
     background-repeat: no-repeat;
+    background-size: cover;
     color: #fff;
     display: flex;
     flex-direction: column;
