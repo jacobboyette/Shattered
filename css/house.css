@@ -27,6 +27,15 @@ body {
     cursor: pointer;
     z-index: 1;
 }
+#hammer{
+    background: none;
+    left: 5px;
+    
+    img{
+        height: 50px;
+        width: 50px;
+    }
+}
 .button {
     padding: 10px 20px;
     margin: 10px;
