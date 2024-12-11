@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Boss Fight</title> 
+    <title>Demon Boss Fight</title>
     <style>
         body {
             margin: 0;
@@ -69,11 +69,13 @@
     <button class="button" id="item1-button" style="display: none;">Use Item 1</button>
     <button class="button" id="item2-button" style="display: none;">Use Item 2</button>
 
-    <script>
+    <script type="module">
+        import { recordBossVictory, recordBossDefeat } from './firebaseConfig.js';
+
         // Initialize inventory and boss weaknesses
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+        const bossWeaknesses = ['crucifix', 'rosary', 'holy water', 'genie lamp'];
 
-        const bossWeaknesses = ['crucifix', 'rosary', 'holy water', 'genie lamp']; // Items that can defeat the Demon
         // Function to update inventory display
         function updateInventoryDisplay() {
             const inventoryList = document.getElementById('inventory-list');
@@ -88,17 +90,19 @@
                 if (button) {
                     button.style.display = 'inline-block';
                     button.textContent = `Use ${item}`;
-                    button.onclick = () => useItem(item.toLowerCase()); // Normalize case for comparison
+                    button.onclick = () => useItem(item.toLowerCase());
                 }
             });
         }
 
         // Function to handle using an item
         function useItem(item) {
-            if (bossWeaknesses.includes(item)) { // Compare normalized item name
-                window.location.href = 'victory.html'; // Redirect to victory page
+            if (bossWeaknesses.includes(item)) {
+                recordBossVictory("Demon"); // Track victory
+                window.location.href = 'victory.html';
             } else {
-                window.location.href = 'defeat.html'; // Redirect to defeat page
+                recordBossDefeat("Demon"); // Track defeat
+                window.location.href = 'defeat.html';
             }
         }
 
