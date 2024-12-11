@@ -18,17 +18,19 @@ body {
 } 
 
 .bg{
+    position: relative;
+    text-align: center;
+
     img{
-        position: fixed;
         size: 55%;
         top: 50px;
     }
 }
 
 #frst{
-    position: fixed;
-    right:15px;
-    top: 256px;
+    position: absolute;
+    right: 195px;
+    top: 205px;
     transform: rotate(-10deg);
     z-index: 1;
     background: none;
@@ -39,9 +41,9 @@ body {
 }
 
 #orcd{
-    position: fixed;
-    right: 170px;
-    top: 353px;
+    position: absolute;
+    right: 200px;
+    top: 300px;
     transform: rotate(9deg);
     font-size: 14px;
     color: black;
@@ -52,9 +54,9 @@ body {
 }
 
 #lke{
-    position: fixed;
-    right: 175px;
-    top:430px;
+    position: absolute;
+    right: 200px;
+    top:380px;
     transform:rotate(9deg);
     font-size: 14px;
     color: black;
@@ -64,9 +66,9 @@ body {
 }
 
 #twn{
-    position: fixed;
-    right: 330px;
-    top: 285px;
+    position: absolute;
+    right: 365px;
+    top: 236px;
     transform: rotate(-10deg);
     font-size: 18px;
     background: none;
