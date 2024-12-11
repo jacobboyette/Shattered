@@ -93,14 +93,14 @@
             const bossRef = doc(db, "bossStats", bossName);
 
             try {
-                const bossDoc = await getDoc(bossRef);
+                const bossDoc = getDoc(bossRef);
 
                 if (bossDoc.exists()) {
-                    await updateDoc(bossRef, {
+                     updateDoc(bossRef, {
                         kills: bossDoc.data().kills + 1
                     });
                 } else {
-                    await setDoc(bossRef, { kills: 1, losses: 0 });
+                     setDoc(bossRef, { kills: 1, losses: 0 });
                 }
 
                 console.log(`${bossName} victory recorded!`);
@@ -113,14 +113,14 @@
             const bossRef = doc(db, "bossStats", bossName);
 
             try {
-                const bossDoc = await getDoc(bossRef);
+                const bossDoc =  getDoc(bossRef);
 
                 if (bossDoc.exists()) {
-                    await updateDoc(bossRef, {
+                     updateDoc(bossRef, {
                         losses: bossDoc.data().losses + 1
                     });
                 } else {
-                    await setDoc(bossRef, { kills: 0, losses: 1 });
+                     setDoc(bossRef, { kills: 0, losses: 1 });
                 }
 
                 console.log(`${bossName} defeat recorded!`);
