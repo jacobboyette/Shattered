@@ -16,6 +16,9 @@ body {
 
 #garrote{
 background: none;
+position: relative;
+left: 50px;
+top: 20px;
 img{
     width: 80px;
     height: auto;
@@ -25,6 +28,7 @@ img{
 
 #ash{
 background: none ;
+position: relative;
 img{
     width: 60px;
     height: auto;
@@ -33,12 +37,13 @@ img{
 
 #rosary{
 background: none;
+position: relative;
 img{
     width: 80px;
     height: auto;
 }
 }
-
+ 
 .dialogue-box {
     position: absolute;
     bottom: 10%;

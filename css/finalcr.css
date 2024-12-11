@@ -13,6 +13,12 @@
             height: 100vh;
             position: relative;
         }
+
+        img{
+            width: 300px;
+            height: auto;
+        }
+
         .dialogue-box {
             position: absolute;
             bottom: 20%;
@@ -34,15 +40,27 @@
             justify-content: center;
             align-items: center;
         }
+        @font-face {
+            font-family: Zombie Holocaust;
+            src: url(../fonts/zombie-holocaust.regular.ttf);
+        }
+        
         .button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 1em;
+            padding: none;
+            margin: 5px;
+            font-family: 'Zombie Holocaust', sans-serif;
+            text-shadow: 0 0 4px green;
+            font-weight: 100;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            display: inline;
             color: #fff;
-            background-color: #007bff;
+            background: none;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+
         }
         .button:hover {
             background-color: #0056b3;
