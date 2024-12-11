@@ -17,8 +17,11 @@ body {
 #axe{
     background: none ;
     position: relative;
+    right: 400px;
+    transform: rotate(30deg);
+    top: 95px;
     img{
-        width: 60px;
+        width: 100px;
         height: auto;
     }
     }
@@ -26,17 +29,21 @@ body {
 #mace{
     background: none ;
     position: relative;
+    transform: rotate(40deg);
+    bottom: 100px;
     img{
-        width: 60px;
+        width: 90px;
         height: auto;
     }
     }
 
 #crucifix{
     background: none ;
-position: relative;
+    position: relative;
+    left: 205px;
+    bottom: 200px;
 img{
-    width: 60px;
+    width: 90px;
     height: auto;
 }
 }
