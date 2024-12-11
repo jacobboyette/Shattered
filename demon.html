@@ -68,66 +68,7 @@
     <!-- Buttons to choose items -->
     <button class="button" id="item1-button" style="display: none;">Use Item 1</button>
     <button class="button" id="item2-button" style="display: none;">Use Item 2</button>
-
-    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
-
-    <script>
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDBkbQWyhqWQH7ftu_KUXrY4-GIspyJEnQ",
-      authDomain: "shattered-database.firebaseapp.com",
-      projectId: "shattered-database",
-      storageBucket: "shattered-database.firebasestorage.app",
-      messagingSenderId: "141879270862",
-      appId: "1:141879270862:web:1709ab92160af548c71f9f",
-          measurementId: "G-HZ3G14TPMV"
-            };
-
-        firebase.innitializeApp(firebaseConfig);
-        firebase.analytics();
-
-        // Firestore functions
-        function recordBossVictory(bossName) {
-            const bossRef = doc(db, "bossStats", bossName);
-
-            try {
-                const bossDoc = getDoc(bossRef);
-
-                if (bossDoc.exists()) {
-                     updateDoc(bossRef, {
-                        kills: bossDoc.data().kills + 1
-                    });
-                } else {
-                     setDoc(bossRef, { kills: 1, losses: 0 });
-                }
-
-                console.log(`${bossName} victory recorded!`);
-            } catch (error) {
-                console.error("Error recording victory:", error);
-            }
-        }
-
-        function recordBossDefeat(bossName) {
-            const bossRef = doc(db, "bossStats", bossName);
-
-            try {
-                const bossDoc =  getDoc(bossRef);
-
-                if (bossDoc.exists()) {
-                     updateDoc(bossRef, {
-                        losses: bossDoc.data().losses + 1
-                    });
-                } else {
-                     setDoc(bossRef, { kills: 0, losses: 1 });
-                }
-
-                console.log(`${bossName} defeat recorded!`);
-            } catch (error) {
-                console.error("Error recording defeat:", error);
-            }
-        }
+<script>
 
         // Game logic
         const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
