@@ -1,5 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>you died lol</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            background-image: url('placeholder-victory-background.jpg'); /* Replace with your background */
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .dialogue-box {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20%;
+        }
+        .button-container {
+            display: none; /* Initially hidden */
+            position: absolute;
+            bottom: 10%;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .priest {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px; /* Adjust based on image size */
+            height: auto;
+        }
+    </style>
 </head>
+<body>
+    <!-- Priest Placeholder -->
+    <img id="priest" src="placeholder-priest-image.png" alt="Priest Image" class="priest">
+
+    <!-- Dialogue Box -->
+    <div id="dialogue-box" class="dialogue-box">
+        [The Priest looks at you and speaks: "Well done, you have triumphed." Click to continue.]
+    </div>
+
+    <!-- Button Container -->
+    <div id="button-container" class="button-container">
+        <a href="index.html" class="button">Back to Homepage</a>
+        <a href="house.html" class="button">Reset Game</a>
+    </div>
+
+    <script>
+        const dialogueBox = document.getElementById('dialogue-box');
+        const buttonContainer = document.getElementById('button-container');
+        const dialogues = [
+            "diaogil 1",
+            "dialgoue two",
+            "dialogoue three."
+        ];
+        let dialogueIndex = 0;
+
+        dialogueBox.addEventListener('click', () => {
+            if (dialogueIndex < dialogues.length - 1) {
+                dialogueIndex++;
+                dialogueBox.textContent = dialogues[dialogueIndex];
+            } else {
+                dialogueBox.style.display = 'none'; // Hide dialogue box
+                buttonContainer.style.display = 'flex'; // Show buttons
+            }
+        });
+    </script>
+</body>
+</html>
