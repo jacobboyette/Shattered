@@ -15,9 +15,8 @@
     <button class="button" onclick="goBack()">Go Back To Crossroads</button>
 
     <!-- Item buttons -->
-    <div id="pan" class="item" style="top: 30%; left: 20%;">Frying Pan</div>
-    <div id="scroll" class="item" style="top: 30%; left: 70%;">Spell Scroll</div>
-    <div id="salt" class="item" style="top: 50%; left: 40%;">Salt</div>
+    <div id="pan" class="item"> <img src="img/fryingpan.png"> </div>
+    <div id="scroll" class="item"> <img src="img/spllsrll.png"></div>
 
     <!-- Inventory display -->
     <div id="inventory" class="inventory">
@@ -65,8 +64,6 @@
         // Add event listeners to items
         document.getElementById('pan').addEventListener('click', () => pickUpItem('Frying Pan', 'pan'));
         document.getElementById('scroll').addEventListener('click', () => pickUpItem('Spell Scroll', 'scroll'));
-        document.getElementById('salt').addEventListener('click', () => pickUpItem('Salt', 'salt'));
-
         // Go outside functionality
         function goBack() {
             window.location.href = 'crossroad.html'; // Replace with the actual next page's filename
