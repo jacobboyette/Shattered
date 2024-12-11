@@ -13,6 +13,32 @@ body {
     height: 100vh;
     position: relative;
 }
+
+#garrote{
+background: none;
+img{
+    width: 80px;
+    height: auto;
+
+}
+}
+
+#ash{
+background: none ;
+img{
+    width: 60px;
+    height: auto;
+}
+}
+
+#rosary{
+background: none;
+img{
+    width: 80px;
+    height: auto;
+}
+}
+
 .dialogue-box {
     position: absolute;
     bottom: 10%;
