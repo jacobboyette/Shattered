@@ -79,17 +79,26 @@ body {
     text-shadow: 0 0 5px white;
 }
 
+@font-face {
+    font-family: Zombie Holocaust;
+    src: url(../fonts/zombie-holocaust.regular.ttf);
+}
+
 .button {
     padding: 10px 20px;
     margin: 10px;
-    font-size: 1em;
+    font-family: 'Zombie Holocaust', sans-serif;
+    text-shadow: 0 0 4px green;
+    font-weight: lighter;
+    font-size: 3em;
     color: #fff;
-    background-color: #007bff;
+    background: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
 }
+
 .button:hover {
     background-color: #0056b3;
 }

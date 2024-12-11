@@ -51,18 +51,37 @@ body {
 #lamp{
     background: none;
     right: 100px;
-     bottom: 50px;
+     bottom: 97px;
      img{
         height: 60px;
         width: auto;
      }
 }
+
+#dragonsbane{
+    background: none;
+    right: 500px;
+    top: 15px;
+    img{
+        width: 40px;
+        height: auto;
+    }
+}
+
+@font-face {
+    font-family: Zombie Holocaust;
+    src: url(../fonts/zombie-holocaust.regular.ttf);
+}
+
 .button {
     padding: 10px 20px;
     margin: 10px;
-    font-size: 1em;
+    font-family: 'Zombie Holocaust', sans-serif;
+    text-shadow: 0 0 4px green;
+    font-weight: lighter;
+    font-size: 3em;
     color: #fff;
-    background-color: #007bff;
+    background: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
